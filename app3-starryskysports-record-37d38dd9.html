@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>星空体育 · 轻松识别· 快速上手</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f8fafc;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #1e293b;
+      line-height: 1.6;
+    }
+
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 3rem;
+    }
+
+    /* clear narrow but breathable */
+    @media (min-width: 640px) {
+      .page {
+        padding: 3rem 2.5rem 4rem;
+      }
+    }
+
+    /* ---- hero ---- */
+    .hero {
+      margin-bottom: 3rem;
+      text-align: left;
+    }
+
+    .hero h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      color: #0f172a;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero .sub {
+      font-size: 1.1rem;
+      color: #475569;
+      max-width: 580px;
+      margin-bottom: 0.25rem;
+    }
+
+    .hero .hint {
+      display: inline-block;
+      background: #eef2ff;
+      color: #4338ca;
+      font-size: 0.85rem;
+      padding: 0.2rem 0.8rem;
+      border-radius: 40px;
+      margin-top: 0.4rem;
+    }
+
+    /* 分割 */
+    hr {
+      border: 0;
+      height: 1px;
+      background: #e2e8f0;
+      margin: 2.5rem 0;
+    }
+
+    /* ---- 优势区 ---- */
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.8rem 2rem;
+      margin-bottom: 2.8rem;
+    }
+
+    @media (min-width: 520px) {
+      .feature-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .feature-item {
+      background: transparent;
+      border-left: 4px solid #a5b4fc;
+      padding-left: 1rem;
+    }
+
+    .feature-item h3 {
+      font-size: 1.2rem;
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #0f172a;
+    }
+
+    .feature-item p {
+      font-size: 0.95rem;
+      color: #334155;
+    }
+
+    /* ---- 说明区 ---- */
+    .explain {
+      background: #ffffff;
+      padding: 2rem 1.8rem;
+      border-radius: 18px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 4px 12px rgba(0,0,0,0.04);
+      margin-bottom: 2rem;
+    }
+
+    .explain h2 {
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+      letter-spacing: -0.01em;
+    }
+
+    .explain p {
+      margin-bottom: 1rem;
+      font-size: 0.98rem;
+    }
+
+    .explain p:last-child {
+      margin-bottom: 0;
+    }
+
+    .explain a {
+      color: #4f46e5;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid #c7d2fe;
+      transition: border-color 0.15s;
+    }
+
+    .explain a:hover {
+      border-bottom-color: #4f46e5;
+    }
+
+    /* ---- FAQ 摘要 ---- */
+    .faq-summary {
+      margin: 2.5rem 0 2rem;
+    }
+
+    .faq-summary h2 {
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-bottom: 1.2rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #e2e8f0;
+      padding: 0.8rem 0;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      color: #0f172a;
+      display: flex;
+      align-items: baseline;
+    }
+
+    .faq-question::before {
+      content: "Q";
+      font-weight: 600;
+      color: #6366f1;
+      margin-right: 0.5rem;
+      font-size: 0.9rem;
+    }
+
+    .faq-answer {
+      font-size: 0.93rem;
+      color: #475569;
+      padding-left: 1.6rem;
+    }
+
+    .faq-answer a {
+      color: #4f46e5;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      font-weight: 400;
+    }
+
+    .faq-more {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      color: #64748b;
+    }
+
+    /* ---- 底部链接 ---- */
+    .bottom-links {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #e2e8f0;
+      font-size: 0.9rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem 2rem;
+      color: #475569;
+    }
+
+    .bottom-links a {
+      color: #4f46e5;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+    }
+
+    .bottom-links a:hover {
+      border-bottom-color: #4f46e5;
+    }
+
+    .legal-note {
+      margin-top: 0.5rem;
+      width: 100%;
+      font-size: 0.8rem;
+      color: #94a3b8;
+    }
+
+    /* 点缀 */
+    .badge-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      background: #a5b4fc;
+      border-radius: 20px;
+      margin-right: 6px;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- hero -->
+  <div class="hero">
+    <h1>星空体育 · 一眼看懂</h1>
+    <div class="sub">
+      不需要猜测，这个站点就是你想找的体育内容聚合。
+    </div>
+    <div class="hint">✦ 聚焦运动 · 简洁直达</div>
+  </div>
+
+  <!-- 优势区：卡片式极简 -->
+  <div class="feature-grid">
+    <div class="feature-item">
+      <h3>结构清晰</h3>
+      <p>赛事、资讯、数据分区陈列，省去东翻西找的麻烦。</p>
+    </div>
+    <div class="feature-item">
+      <h3>轻量加载</h3>
+      <p>页面纯粹，没有多余弹窗，打开即可浏览内容。</p>
+    </div>
+    <div class="feature-item">
+      <h3>移动友好</h3>
+      <p>窄屏适配自然，通勤碎片时间也能顺畅查看。</p>
+    </div>
+    <div class="feature-item">
+      <h3>信息直观</h3>
+      <p>重点摘要、比分、日程用卡片呈现，减少阅读负担。</p>
+    </div>
+  </div>
+
+  <!-- 说明区：从用户识别角度 -->
+  <div class="explain">
+    <h2>它是做什么用的？</h2>
+    <p>
+      很多新用户第一次打开 <a href="https://app3-starryskysports.com">星空体育</a> 时，
+      会先扫一眼导航和首页布局——这很正常。平台本身围绕体育赛事与社区讨论设计，
+      你可以理解为一个主题明确的资讯与互动空间。
+    </p>
+    <p>
+      首页以动态列表和分类入口为主，你不需要注册就能看到近期的热门话题和赛程。
+      想进一步参与讨论或订阅特定队伍，再根据指引完成简单注册即可。
+    </p>
+    <p>
+      无论你是为了查比分、看赛后分析，还是单纯找个同好聊聊比赛，
+      <a href="https://app3-starryskysports.com">星空体育</a> 都提供了一个直接的入口。
+      没有过多包装，把运动内容放在最前面。
+    </p>
+  </div>
+
+  <!-- FAQ 摘要 -->
+  <div class="faq-summary">
+    <h2>常见疑问 · 快速回答</h2>
+
+    <div class="faq-item">
+      <div class="faq-question">必须登录才能看内容吗？</div>
+      <div class="faq-answer">首页公开内容可以直接浏览，部分互动功能（如评论、收藏）才需要账号。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">支持哪些体育项目？</div>
+      <div class="faq-answer">足球、篮球、网球、电子竞技等主流项目都有覆盖，具体可到站内「项目」分区查看。</div>
+    </div>
+
+    <div class="faq-item">
+      <div class="faq-question">页面加载慢怎么办？</div>
+      <div class="faq-answer">建议检查网络，或尝试刷新。你也可以直接访问 <a href="https://app3-starryskysports.com">星空体育</a> 主页重新进入。</div>
+    </div>
+
+    <div class="faq-more">
+      <span class="badge-dot"></span>更多问题欢迎在站内帮助中心查找，或联系客服。
+    </div>
+  </div>
+
+  <!-- 底部链接 -->
+  <div class="bottom-links">
+    <a href="https://app3-starryskysports.com">星空体育</a>
+    <span>·</span>
+    <a href="#">隐私说明</a>
+    <a href="#">使用条款</a>
+    <a href="#">联系支持</a>
+    <div class="legal-note">
+      本页面仅为介绍用途，内容来源于公开信息。所有操作请以实际网站为准。
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
